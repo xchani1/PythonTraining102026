@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brno BI Christmas Teambuilding</title>
+<meta name="description" content="You are invited: Christmas teambuilding of the Brno BI team on 4 December 2026 in the Brno office. Let's make ginger shots together!">
+<style>
+  :root {
+    --black: #000000;
+    --ink: #1a1a1a;
+    --white: #ffffff;
+    --grey: #f2f2f2;
+    --mid: #6b6b6b;
+    --blue: #0b6bff;
+    --blue-dark: #0848b3;
+    --ginger: #f5a623;
+    --radius: 6px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink);
+    background: var(--white);
+    line-height: 1.6;
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+  /* zebra stripe motif */
+  .stripes {
+    height: 14px;
+    background: repeating-linear-gradient(115deg, var(--black) 0 18px, var(--white) 18px 36px);
+  }
+
+  header.top { background: var(--black); color: var(--white); }
+  header.top .wrap { display: flex; justify-content: space-between; align-items: center; height: 60px; }
+  .brand { font-weight: 800; letter-spacing: .18em; text-transform: uppercase; font-size: .95rem; }
+  .brand span { color: var(--blue); }
+  header.top a { color: var(--white); text-decoration: none; font-size: .9rem; margin-left: 22px; opacity: .85; }
+  header.top a:hover { opacity: 1; color: var(--ginger); }
+
+  .hero {
+    background: var(--black);
+    color: var(--white);
+    padding: 80px 0 90px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: "";
+    position: absolute; right: -80px; top: 0; bottom: 0; width: 360px;
+    background: repeating-linear-gradient(115deg, #1c1c1c 0 28px, #000 28px 56px);
+    opacity: .9;
+  }
+  .hero .wrap { position: relative; z-index: 1; }
+  .eyebrow { color: var(--ginger); text-transform: uppercase; letter-spacing: .2em; font-size: .8rem; font-weight: 700; }
+  h1 { font-size: clamp(2.2rem, 6vw, 4rem); line-height: 1.08; margin: 14px 0 18px; font-weight: 800; max-width: 700px; }
+  h1 em { font-style: normal; color: var(--ginger); }
+  .lead { font-size: 1.15rem; max-width: 560px; color: #d9d9d9; }
+  .chips { display: flex; flex-wrap: wrap; gap: 12px; margin: 30px 0; }
+  .chip { border: 1px solid #444; border-radius: 999px; padding: 8px 18px; font-size: .95rem; background: #111; }
+  .chip b { color: var(--ginger); }
+  .btn {
+    display: inline-block; background: var(--blue); color: var(--white); text-decoration: none;
+    padding: 14px 28px; border-radius: var(--radius); font-weight: 700; transition: background .2s;
+  }
+  .btn:hover { background: var(--blue-dark); }
+  .btn:focus-visible { outline: 3px solid var(--ginger); outline-offset: 3px; }
+
+  section { padding: 70px 0; }
+  section.alt { background: var(--grey); }
+  h2 { font-size: 2rem; margin-bottom: 8px; font-weight: 800; }
+  h2::after { content: ""; display: block; width: 56px; height: 5px; background: var(--blue); margin-top: 10px; }
+  .sub { color: var(--mid); margin: 14px 0 34px; max-width: 620px; }
+
+  .countdown { display: flex; gap: 14px; flex-wrap: wrap; }
+  .cd { background: var(--black); color: var(--white); border-radius: var(--radius); padding: 16px 22px; text-align: center; min-width: 92px; }
+  .cd b { display: block; font-size: 2rem; line-height: 1.1; color: var(--ginger); }
+  .cd small { text-transform: uppercase; letter-spacing: .12em; font-size: .7rem; color: #bbb; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; }
+  .card { background: var(--white); border-radius: var(--radius); border-top: 5px solid var(--black); padding: 26px; box-shadow: 0 2px 10px rgba(0,0,0,.07); }
+  .card:nth-child(2) { border-top-color: var(--ginger); }
+  .card:nth-child(3) { border-top-color: var(--blue); }
+  .card .icon { font-size: 2rem; margin-bottom: 10px; }
+  .card h3 { margin-bottom: 6px; }
+  .card p { color: #444; font-size: .97rem; }
+
+  .details { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; border: 2px solid var(--black); border-radius: var(--radius); overflow: hidden; }
+  .details div { padding: 24px; border-right: 2px solid var(--black); background: var(--white); }
+  .details div:last-child { border-right: 0; }
+  .details span { display: block; text-transform: uppercase; letter-spacing: .14em; font-size: .72rem; color: var(--mid); font-weight: 700; margin-bottom: 6px; }
+  .details strong { font-size: 1.25rem; }
+
+  .contact { background: var(--black); color: var(--white); text-align: center; }
+  .contact h2::after { margin-left: auto; margin-right: auto; }
+  .contact p { color: #ccc; margin: 14px auto 24px; max-width: 520px; }
+  .contact a.mail { color: var(--ginger); font-weight: 700; font-size: 1.2rem; }
+
+  footer { background: var(--black); color: #888; text-align: center; font-size: .85rem; padding: 22px 0 26px; }
+
+  @media (max-width: 720px) {
+    .details div { border-right: 0; border-bottom: 2px solid var(--black); }
+    .details div:last-child { border-bottom: 0; }
+    .hero::after { display: none; }
+    header.top nav a:not(:last-child) { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand">Brno <span>BI</span> Team</div>
+    <nav>
+      <a href="#plan">The plan</a>
+      <a href="#details">Details</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+<div class="stripes" aria-hidden="true"></div>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">You're invited · Zebra Brno BI Team</p>
+      <h1>Christmas teambuilding with a <em>ginger</em> kick</h1>
+      <p class="lead">Let's close the year together: celebrate Christmas, make our own ginger shots and simply have fun outside of our dashboards.</p>
+      <div class="chips">
+        <div class="chip">📅 <b>4 December 2026</b></div>
+        <div class="chip">📍 <b>Brno Office</b></div>
+        <div class="chip">🎄 Brno BI Team</div>
+      </div>
+      <a class="btn" href="#contact">Questions? Get in touch</a>
+    </div>
+  </section>
+  <div class="stripes" aria-hidden="true"></div>
+
+  <section id="countdown">
+    <div class="wrap">
+      <h2>Save the date</h2>
+      <p class="sub" id="cd-text">Time left until we get together.</p>
+      <div class="countdown" id="countdown-boxes" role="timer" aria-live="off">
+        <div class="cd"><b id="d">–</b><small>Days</small></div>
+        <div class="cd"><b id="h">–</b><small>Hours</small></div>
+        <div class="cd"><b id="m">–</b><small>Minutes</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="plan" class="alt">
+    <div class="wrap">
+      <h2>The plan</h2>
+      <p class="sub">A relaxed day for the whole Brno BI team. No slides, no reports, just good company.</p>
+      <div class="grid">
+        <article class="card">
+          <div class="icon">🎄</div>
+          <h3>Celebrate Christmas</h3>
+          <p>Festive atmosphere in the office, a chance to look back on the year and toast to what we achieved together.</p>
+        </article>
+        <article class="card">
+          <div class="icon">🫚</div>
+          <h3>Make ginger shots</h3>
+          <p>We'll prepare our own ginger shots together. Fresh ginger, lemon and a bit of creativity. Everyone can mix their own flavour.</p>
+        </article>
+        <article class="card">
+          <div class="icon">😄</div>
+          <h3>Have fun</h3>
+          <p>Chat, laugh and get to know each other better. The best data stories are made by a team that enjoys working together.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="details">
+    <div class="wrap">
+      <h2>Details</h2>
+      <p class="sub">Everything you need to know at a glance.</p>
+      <div class="details">
+        <div><span>Date</span><strong>Friday, 4 December 2026</strong></div>
+        <div><span>Place</span><strong>Zebra Brno Office</strong></div>
+        <div><span>Who</span><strong>Brno BI Team</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Questions?</h2>
+      <p>Allergies, dietary needs or anything else on your mind? Reach out to Alena Novotná.</p>
+      <a class="mail" href="mailto:alena.novotna@zebra.com">alena.novotna@zebra.com</a>
+    </div>
+  </section>
+</main>
+
+<div class="stripes" aria-hidden="true"></div>
+<footer>
+  <div class="wrap">Brno BI Team · Christmas Teambuilding 2026</div>
+</footer>
+
+<script>
+  (function () {
+    var target = new Date(2026, 11, 4, 0, 0, 0).getTime(); // 4 Dec 2026
+    var d = document.getElementById('d'), h = document.getElementById('h'), m = document.getElementById('m');
+    function tick() {
+      var diff = target - Date.now();
+      if (diff <= 0) {
+        document.getElementById('countdown-boxes').style.display = 'none';
+        document.getElementById('cd-text').textContent = 'The day is here. See you at the office!';
+        return;
+      }
+      d.textContent = Math.floor(diff / 864e5);
+      h.textContent = Math.floor(diff % 864e5 / 36e5);
+      m.textContent = Math.floor(diff % 36e5 / 6e4);
+    }
+    tick();
+    setInterval(tick, 30000);
+  })();
+</script>
+</body>
+</html>
